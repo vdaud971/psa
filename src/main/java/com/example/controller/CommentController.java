@@ -24,4 +24,9 @@ public class CommentController {
         return new ResponseEntity<>(comment,HttpStatus.CREATED);
 
     }
+    @DeleteMapping
+    public ResponseEntity<String>deleteCommentById(@RequestParam long postid){
+        commentService.deleteByyId(postid);
+        return null;
+    }
 }

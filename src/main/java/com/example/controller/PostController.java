@@ -6,6 +6,7 @@ import com.example.service.PostService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -22,7 +23,8 @@ public class PostController {
         PostDto post = postService.createPost(postDto);
         return new ResponseEntity<>(post, HttpStatus.CREATED);
     }
-
+    //http://localhost:8080/api/v1/post?id=
+ @Transactional
     @DeleteMapping
     public ResponseEntity<String>deletePost(@RequestParam long id){
         postService.deletePost(id);

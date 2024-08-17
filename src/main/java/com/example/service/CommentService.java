@@ -6,4 +6,6 @@ import com.example.paylod.CommentDto;
 public interface CommentService {
 
     CommentDto createComment(long id, CommentDto commentDto);
+
+    void deleteByyId(long postid);
 }
